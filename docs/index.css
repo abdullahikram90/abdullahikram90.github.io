@@ -32,7 +32,7 @@ body{
 .header-area {
     width: 100%;
     position:fixed;
-    background-color: #ffffff; /* Light header */
+    background-color: #fff;
 }
 
 /* Dark Mode Styles */
@@ -46,7 +46,65 @@ body{
 }
 .navbar li a.dark-mode {
     color: #ffffff !important; /* Light navbar links */
+
 } 
+.navbar.active.dark-mode{
+  background-color: #353333;
+}
+/*----------------slide navbar----------*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex; /* Show navbar items in a row on desktop */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-left: 20px; /* Space between items */
+}
+
+/* Mobile styles */
+.menu_icon {
+  display: none; /* Hidden by default on desktop */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      display: none; /* Hide navbar by default on mobile */
+      flex-direction: column; /* Stack items vertically */
+      position: absolute; /* Position absolutely for overlay effect */
+      background-color: white; /* Background color */
+      width: 100%; /* Full width */ 
+      top: 50px; /* Position below header */
+      left: 0; /* Align left */
+      z-index: 1000; /* Ensure it's on top */
+  }
+
+  .navbar.active {
+      display: flex; /* Show navbar when active */
+      margin-top: 15px;
+      background-color: #ffffff;
+      color: #000000;
+      justify-content: right;
+      align-items: center;
+  }
+  .menu_icon {
+      display: block; /* Show the menu icon on mobile */
+      cursor: pointer; /* Pointer for the icon */
+  }
+}
+.dark-mode .navbar.active{
+  color: #fff;
+  background-color: #353333;
+}
+
 /*---------------------------Header---------------------------*/
 .header-area{
   padding:25px 0;
@@ -90,9 +148,6 @@ body{
   height:auto; 
   margin-right: 10px; 
 }
-.header ul li:first-child {
-  margin-right: auto; 
-}  
 .header ul{
   display: flex;
   align-items: center; 
@@ -293,11 +348,11 @@ body{
   border-color: #fed700;
 }
 #dark-mode-toggle{
-    background-color: #fff;
+    background-color:#ffffff;
     border: none;
 }
 #dark-mode-toggle .dark-mode{
-    background-color: #fff;
+    background-color: #353333;
     border: none;
 }
 /*---------------------------Education & Internship---------------------------*/
