@@ -598,7 +598,7 @@ body{
 @media(max-width:1050px){
   .FirstElement{ 
     flex-direction: column;
-    padding-top: 2rem;
+    padding-top: 9rem;
   }
   .profile-text{
     padding: 40px 0px;
